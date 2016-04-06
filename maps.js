@@ -9,6 +9,7 @@
         MapsApp.instance = this;
         
         this.container = null;
+		this.map = null;
 
         this.init();
     };
@@ -22,6 +23,17 @@
             console.log('MapsApp started');
             
             this.container = document.querySelector('#map-container');
+			
+			var options = {
+				center: {
+					lat: 59.439252, 
+					lng: 24.7721997
+				},
+				zoom: 6
+				
+			};
+			
+			this.map = new google.maps.Map(this.container, options);
 
         },
     }; 
